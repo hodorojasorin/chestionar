@@ -106,6 +106,18 @@
             font-weight: 600;
         }
 
+        h1{
+            text-align: center;
+        }
+
+        .rosu{
+            color: #df153c;
+        }
+
+        .albastru{
+            color: #1a293a;
+        }
+
         @media (max-width: 480px) {
             .card {
                 padding: 1.2rem;
@@ -135,6 +147,8 @@
 
 <body>
     <div class="card">
+        <h1>Află ce specialitate de la <span class="rosu"><span class="albastru">CE</span>ITI</span> îți este recomandată:</h1>
+        <button id="startBtn" class="retry-btn" style="margin-top: 1rem;">Începe testul</button>
         <div id="quiz">
             <h2 id="question">Întrebarea va apărea aici</h2>
             <div class="options" id="options"></div>
@@ -216,7 +230,14 @@
             }
         }
 
-        showQuestion();
+        document.getElementById("quiz").style.display = "none";
+
+        document.getElementById("startBtn").addEventListener("click", () => {
+            document.getElementById("startBtn").style.display = "none";
+            document.getElementById("quiz").style.display = "block";
+            showQuestion();
+        });
+
     </script>
 </body>
 
