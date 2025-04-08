@@ -158,6 +158,8 @@
 
     <script>
         const questions = [
+            { q: "Ești absolvent al?", o: ["Gimnaziu", "Școală profesională", "Liceu"] },
+            { q: "Care este media notelor tale?", o: ["9-10", "8-9", "8-7", "6-7","5" ] },
             { q: "Ce materie îți place cel mai mult?", o: ["Matematică", "Informatică", "Economie", "Limba română"] },
             { q: "Cum preferi să lucrezi?", o: ["Rezolv probleme logice", "Scriu cod și testez", "Organizez documente sau finanțe", "Comunic cu oameni"] },
             { q: "Ce activitate te atrage cel mai mult?", o: ["Creez aplicații web", "Configurez rețele sau device-uri", "Lucrez cu facturi și registre", "Colaborez și scriu documente"] },
@@ -220,12 +222,12 @@
                 const resultIndex = total % specialties.length;
                 document.getElementById("quiz").style.display = "none";
                 resultEl.innerHTML = `
-          Specialitatea potrivită pentru tine este: <strong>${specialties[resultIndex]}</strong><br><br>
-          <em>${descriptions[resultIndex]}</em>
-          <br>
-          <img class='gif' src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTl1bzd1YTZraHpya3ExM2dtZmt0ZGU0b2R1aTN3bTdxanBsdnpxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ufdipQqU2lhNA4g/giphy.gif' alt='Bravo!'>
-          <button class="retry-btn" onclick="window.location.reload()">Reia testul</button>
-          <div class="link">Te așteptăm la <a href="https://ceiti.md/" target="_blank">ceiti.md</a>!</div>
+            Specialitatea potrivită pentru tine este: <strong>${specialties[resultIndex]}</strong><br><br>
+            <em>${descriptions[resultIndex]}</em>
+            <br>
+            <img class='gif' src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTl1bzd1YTZraHpya3ExM2dtZmt0ZGU0b2R1aTN3bTdxanBsdnpxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ufdipQqU2lhNA4g/giphy.gif' alt='Bravo!'>
+            <button class="retry-btn" onclick="window.location.reload()">Reia testul</button>
+            <div class="link">Te așteptăm la <a href="https://ceiti.md/" target="_blank">ceiti.md</a>!</div>
         `;
             }
         }
