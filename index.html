@@ -14,13 +14,28 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: url('road.jpg') no-repeat center center fixed;
-            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('robotik.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(4px);
+            /* aici setezi cât de mult să fie blur-ul */
+            z-index: -1;
+            opacity: 0.9;
         }
 
         .card {
@@ -106,15 +121,15 @@
             font-weight: 600;
         }
 
-        h1{
+        h1 {
             text-align: center;
         }
 
-        .rosu{
+        .rosu {
             color: #df153c;
         }
 
-        .albastru{
+        .albastru {
             color: #1a293a;
         }
 
@@ -147,7 +162,8 @@
 
 <body>
     <div class="card">
-        <h1>Află ce specialitate de la <span class="rosu"><span class="albastru">CE</span>ITI</span> îți este recomandată:</h1>
+        <h1>Află ce specialitate de la <span class="rosu"><span class="albastru">CE</span>ITI</span> îți este
+            recomandată:</h1>
         <button id="startBtn" class="retry-btn" style="margin-top: 1rem;">Începe testul</button>
         <div id="quiz">
             <h2 id="question">Întrebarea va apărea aici</h2>
@@ -158,27 +174,27 @@
 
     <script>
         const questions = [
-        //1
+            //1
             { q: "Ce dreaptă absolvezi?", o: ["Gimnaziu", "Școală profesională", "Liceul"] },
-        //2
-            { q: "Care este media notelor tale?", o: ["9-10", "8-9", "8-7", "6-7","5" ] },
-        //3
+            //2
+            { q: "Care este media notelor tale?", o: ["9-10", "8-9", "8-7", "6-7", "5"] },
+            //3
             { q: "Ce materie îți place cel mai mult dintre acestea?", o: ["Matematică", "Informatică", "Economie", "Limba română"] },
-        //4
+            //4
             { q: "Ce profil crezi că ți se potrivește?", o: ["Real", "Umanist", "Încă nu știu"] },
-        //5
+            //5
             { q: "Ce activitate te atrage cel mai mult?", o: ["Rezolv probleme logice", "Scriu cod și testez", "Organizez documente sau finanțe", "Lucrez cu oameni"] },
-        //6
+            //6
             { q: "Ce ai prefera să faci în viitor?", o: ["Creez aplicații web", "Configurez rețele sau device-uri", "Lucrez cu facturi și registre", "Lucrez cu documentele și rezolvar probleme administrative"] },
-        //7
+            //7
             { q: "Ai vrea un program mai scurt de 3 ani?", o: ["Da", "Nu", "Depinde", "Nu contează"] },
-        //8
-            { q: "În calitate de ce îți vezi viitorul profesional?", o: ["Programator", "Freelancer în IT", "Designer WEB","Tehnician rețele", "Contabil", "Secretar", "Altceva / Nu știu încă"] },
-        //9
+            //8
+            { q: "În calitate de ce îți vezi viitorul profesional?", o: ["Programator", "Freelancer în IT", "Designer WEB", "Tehnician rețele", "Contabil", "Secretar", "Altceva / Nu știu încă"] },
+            //9
             { q: "Ce îți place să faci cel mai mult?", o: ["Să creez ceva util", "Să lucrez cu calculatoarele (cabluri, conectări)", "Să fac diverse proiecte pe diverse subiecte", "Să ajut și să comunic"] },
-        //10
+            //10
             { q: "Cât de mult îți place să lucrezi la PC?", o: ["Tot timpul", "Mult", "Doar când e nevoie", "Puțin"] },
-        //11
+            //11
             { q: "Cât de importantă este limba engleză pentru viitorul tău profesional?", o: ["Foarte importantă", "O folosesc ocazional", "Încă învăț", "Nu prea contează"] }
         ];
 
